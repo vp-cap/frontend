@@ -1,0 +1,26 @@
+<div class="uploadForm">
+	<mat-form-field class="example-full-width">
+		<input matInput id="url" type="url" #url name="url" placeholder="URL">
+	</mat-form-field>
+
+	<mat-form-field class="example-full-width">
+		<textarea matInput id="desc" type="text" #desc name="desc" cols="40" rows="5" placeholder="Description"></textarea>
+	</mat-form-field>
+
+	<p>Possible categories</p>
+	<div *ngFor="let category of categories">
+		<mat-checkbox color="primary" (change)="onChange(category, $event.target.checked)"> {{category}}</mat-checkbox><br>
+	</div>
+
+	<!-- <input type="file" name="videoUpload" (change)="onFileChange($event)"/> -->
+
+	<div class="image-select">
+		<button mat-stroked-button (click)="fileInput.click()">Select Image</button>
+		<input id="photo" class="image-select" type="file" (change)="onFileChange($event)" #fileInput />
+	</div>
+
+	<button style="margin: 30px" mat-stroked-button color="primary" (click)="onSubmit(url.value, desc.value)">Upload</button>
+
+</div>
+
+

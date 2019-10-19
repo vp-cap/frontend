@@ -1,0 +1,36 @@
+<div class="uploadForm">
+	<mat-form-field class="example-full-width">
+		<input id="title" matInput type="text" #title name="title" placeholder="Title">
+	</mat-form-field>
+
+	<mat-form-field class="example-full-width">
+		<textarea matInput id="desc" type="text" #desc name="desc" cols="40" rows="5" placeholder="Description"></textarea>
+	</mat-form-field>
+
+	<mat-form-field>
+		<mat-label>Category</mat-label>
+		<mat-select [(value)]="selectedCategory">
+			<mat-option *ngFor="let category of categories" [value]="category">
+				{{category}}
+			</mat-option>
+		</mat-select>
+	</mat-form-field>
+		
+	<div *ngIf="uploadResponse.status === 'progress'">
+		<div role="progressbar" [style.width.%]="uploadResponse.message" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+			{{uploadResponse.message}}%
+		</div>
+	</div>
+	<mat-progress-bar mode="determinate" value="uploadResponse.message"></mat-progress-bar>
+
+	
+	<div class="image-select">
+		<button mat-stroked-button (click)="fileInput.click()">Select Image</button>
+		<input id="photo" class="image-select" type="file" (change)="onFileChange($event)" #fileInput />
+	</div>
+
+	<button style="margin: 30px" mat-stroked-button color="primary" (click)="onSubmit(title.value, desc.value)">Upload</button>
+
+</div>
+
+
