@@ -17,11 +17,13 @@ export class SearchService {
 	public search(query) {
 		let uploadURL = `${this.baseUrl}/video/search/`;
 
-		return this.httpClient.post<any>(uploadURL, query, {
+		const formData = new FormData();
+		formData.append('query', query);
+
+		return this.httpClient.post<any>(uploadURL, formData, {
 			reportProgress: true,
 			observe: 'events'
 		}).pipe(tap((result) => {
-			console.log("re");
 			result = result
 			this.router.navigate(['/search']);})
 		)

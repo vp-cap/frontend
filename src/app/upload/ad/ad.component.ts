@@ -48,7 +48,7 @@ export class AdComponent implements OnInit {
 		formData.append('image_url', image_url);
 		formData.append('object', object);
 
-		this.uploadService.upload(formData, 0).subscribe(
+		this.uploadService.upload(formData, 1).subscribe(
 		  (res) => this.uploadResponse = res,
 		  (err) => this.error = err
 		);
