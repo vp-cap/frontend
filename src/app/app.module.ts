@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HomeModule } from './home/home.module';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatListModule} from '@angular/material/list';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import {MatListModule} from '@angular/material/list';
   MatChipsModule,
   MatListModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

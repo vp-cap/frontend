@@ -1,9 +1,6 @@
-<div *ngFor="let item of videos | keyvalue">
-	<div *ngFor="let video of item.value">	
-		<mat-card routerLink="['/watch', {id: video.id}]" routerLinkActive="active">
-			<h3>{{video.title}}</h3>
-			<p>{{video.description}}</p>
-			<h4>{{video.category}}</h4>
-		</mat-card>
-	</div>
+<div *ngFor="let item of videos">
+	<mat-card class="video-links" [routerLink]="['/watch/', item.id]" routerLinkActive="active">
+		<h3>{{item.title}}</h3>
+		<mat-chip-list><mat-chip>{{item.category}}</mat-chip></mat-chip-list>
+	</mat-card>
 </div>

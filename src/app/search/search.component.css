@@ -1,0 +1,7 @@
+.video-links {
+	margin: 2px 100px 2px 100px;
+	display: flex;
+	flex-direction: row !important;
+	justify-content: space-between !important;
+	cursor: pointer;
+}

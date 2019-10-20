@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { SearchService } from 'src/app/services/search.service'
+import { DataService } from './services/data.service';
+import { Router } from "@angular/router";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,10 +11,15 @@ import { SearchService } from 'src/app/services/search.service'
 export class AppComponent {
   title = 'hackinout-frontend';
 
-	constructor(private searchService: SearchService) {}
+	constructor(private data: DataService, private router: Router) {}
+	message:string;
+
+	ngOnInit() {
+		this.data.currentMessage.subscribe(message => this.message = message)
+	}
 
 	Search(query) {
-		console.log(query)
-		this.searchService.search(query)
+		this.data.changeMessage(query);
+		this.router.navigate(['/search']);
 	}
 }

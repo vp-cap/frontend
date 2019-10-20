@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpErrorResponse, HttpEventType } from  '@angular/common/http';
+// import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
-import { tap } from 'rxjs/operators';
-import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +9,7 @@ import {Router} from "@angular/router";
 export class SearchService {
 
 	baseUrl = environment.baseUrl;
-	constructor(private httpClient: HttpClient, private router: Router) { }
-
-	result
+	constructor(private httpClient: HttpClient) { }
 
 	public search(query) {
 		let uploadURL = `${this.baseUrl}/video/search/`;
@@ -23,10 +20,6 @@ export class SearchService {
 		return this.httpClient.post<any>(uploadURL, formData, {
 			reportProgress: true,
 			observe: 'events'
-		}).pipe(tap((result) => {
-			result = result
-			this.router.navigate(['/search']);})
-		)
-		.subscribe();
+		});
 	}
 }
