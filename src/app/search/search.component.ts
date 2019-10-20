@@ -14,25 +14,23 @@ export class SearchComponent implements OnInit {
 	constructor(private data: DataService, private searchService: SearchService) { 
 	}
 
+
 	ngOnInit() {
 		this.data.currentMessage.subscribe((message) => {
 			this.message = message;
 			console.log("Query = " + this.message)
 			if (this.message != undefined && this.message != '' && this.message != null) {
+				console.log("in if");
 				this.searchService.search(this.message).subscribe((data) => {
-					data = data['body'];
-
-					for (let k in data) {
-						console.log(k)
-						for (let x in data[k]) {
-							this.videos.push(data[k][x])
-						}
-					}
+					console.log("this", data);
+					// console.log("err", err);
+					// data = data['body'];
+					
+					this.videos = data["videos"];
 					console.log(this.videos)
 				}) 
 			}
 		});
 	}
-
 
 }

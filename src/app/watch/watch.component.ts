@@ -53,7 +53,7 @@ export class WatchComponent implements OnInit, OnDestroy {
   parseFrames(event) {
     let time = event.srcElement.currentTime;
     
-    if (time > this.adPosition && time < this.adPosition + 2) {
+    if (time > this.adPosition && time < this.adPosition + 5) {
       console.log("Block");
       this.adVisibility = "block";
     } else {

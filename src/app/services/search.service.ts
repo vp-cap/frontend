@@ -16,10 +16,8 @@ export class SearchService {
 
 		const formData = new FormData();
 		formData.append('query', query);
+		console.log(formData);
 
-		return this.httpClient.post<any>(uploadURL, formData, {
-			reportProgress: true,
-			observe: 'events'
-		});
+		return this.httpClient.post<any>(uploadURL, formData, {});
 	}
 }
