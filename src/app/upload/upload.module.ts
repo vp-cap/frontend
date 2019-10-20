@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatButtonModule} from '@angular/material/button';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [UploadComponent, VideoComponent, AdComponent],
@@ -21,7 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
 	MatFormFieldModule,
 	MatInputModule,
 	MatProgressBarModule,
-	MatButtonModule
+	MatButtonModule,
+	MatAutocompleteModule
   ]
 })
 export class UploadModule { }

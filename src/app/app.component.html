@@ -1,5 +1,5 @@
 <div id="navb">
-	<input id="search" type="text" placeholder="Search"/>
+	<input id="search"  #search type="text" placeholder="Search"  (keyup.enter)="Search(search.value)"/>
 	<div class="nav-pills" routerLink="/upload" routerLinkActive="active"><img src="../assets/upload/upload.png" /></div>
 </div>
 

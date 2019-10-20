@@ -7,7 +7,8 @@ import { SearchComponent } from './search/search.component';
 import { UploadModule } from './upload/upload.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 	UploadModule,
 	NoopAnimationsModule,
 	HttpClientModule,
-	MatToolbarModule
+	MatToolbarModule,
+	MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

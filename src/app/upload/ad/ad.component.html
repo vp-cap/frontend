@@ -1,25 +1,37 @@
 <div class="uploadForm">
 	<mat-form-field class="example-full-width">
-		<input matInput id="url" type="url" #url name="url" placeholder="URL">
+		<input matInput id="redirect_url" type="url" #redirect_url name="redirect_url" placeholder="Redirect URL">
 	</mat-form-field>
 
 	<mat-form-field class="example-full-width">
-		<textarea matInput id="desc" type="text" #desc name="desc" cols="40" rows="5" placeholder="Description"></textarea>
+		<input matInput id="image_url" type="url" #image_url name="image_url" placeholder="Image URL">
 	</mat-form-field>
 
-	<p>Possible categories</p>
-	<div *ngFor="let category of categories">
-		<mat-checkbox color="primary" (change)="onChange(category, $event.target.checked)"> {{category}}</mat-checkbox><br>
-	</div>
+	<mat-form-field>
+		<mat-label>Category</mat-label>
+		<mat-select [(value)]="selectedCategory">
+			<mat-option *ngFor="let category of categories" [value]="category">
+				{{category}}
+			</mat-option>
+		</mat-select>
+	</mat-form-field>
 
-	<!-- <input type="file" name="videoUpload" (change)="onFileChange($event)"/> -->
+	<mat-form-field class="example-full-width">
+		<input matInput id="object" type="text" #object name="object" placeholder="Object">
+	</mat-form-field>
 
-	<div class="image-select">
-		<button mat-stroked-button (click)="fileInput.click()">Select Image</button>
-		<input id="photo" class="image-select" type="file" (change)="onFileChange($event)" #fileInput />
-	</div>
+	<!-- <form class="example-form">
+		<mat-form-field class="example-full-width">
+			<input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+			<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+			<mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+				{{option}}
+			</mat-option>
+			</mat-autocomplete>
+		</mat-form-field>
+	</form> -->
 
-	<button style="margin: 30px" mat-stroked-button color="primary" (click)="onSubmit(url.value, desc.value)">Upload</button>
+	<button style="margin: 30px" mat-stroked-button color="primary" (click)="onSubmit(redirect_url.value, image_url.value, object.value)">Upload</button>
 
 </div>
 

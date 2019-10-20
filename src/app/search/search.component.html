@@ -1,3 +1,7 @@
-<p>
-  search works!
-</p>
+<div *ngFor="let video of videos">
+	<mat-card routerLink="['/watch', {id: video.id}]" routerLinkActive="active">
+		<h3>{{video.title}}</h3>
+		<p>{{video.description}}</p>
+		<h4>{{video.category}}</h4>
+	</mat-card>
+</div>

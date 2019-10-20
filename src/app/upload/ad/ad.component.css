@@ -3,12 +3,3 @@
 	flex-direction: column;
 	width: 500px;
 }
-
-.image-select {
-    align-self: center;
-    margin: 1em;
-}
-
-#photo {
-    display: none;
-}
