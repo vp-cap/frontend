@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UploadComponent } from './upload/upload.component';
 import { SearchComponent } from './search/search.component';
+import { WatchComponent } from './watch/watch.component';
 
 const routes: Routes = [
 	{
@@ -12,10 +13,14 @@ const routes: Routes = [
 		path: 'search',
 		component: SearchComponent
 	},
+	{
+		path: 'watch/:video_id',
+		component: WatchComponent
+	},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }

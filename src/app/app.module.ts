@@ -7,7 +7,8 @@ import { SearchComponent } from './search/search.component';
 import { UploadModule } from './upload/upload.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { WatchModule } from './watch/watch.module';
 
 
 @NgModule({
@@ -17,11 +18,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   ],
   imports: [
     BrowserModule,
-	AppRoutingModule,
-	UploadModule,
-	NoopAnimationsModule,
-	HttpClientModule,
-	MatToolbarModule
+    AppRoutingModule,
+    UploadModule,
+    NoopAnimationsModule,
+    HttpClientModule,
+    MatToolbarModule,
+    WatchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

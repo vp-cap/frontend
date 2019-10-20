@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="ad-container">
+    <video controls #videoEl>
+      <source src="{{streamURL}}">
+    </video>
+    <div class="banner-ad" [ngStyle]="{'display': adVisibility}">
+      <a href="{{adLink}}"><img src="{{adImage}}"></a>
+    </div>
+  </div>
+  <h2 style="margin-bottom: 1px;">{{ title }}</h2>
+  <p>{{ description }}</p>
+</div>
