@@ -17,6 +17,7 @@ export class WatchComponent implements OnInit, OnDestroy {
   adImage: String;
   adPosition = 20;
   adVisibility: String = "none";
+  sub;
 
   constructor(private _Activatedroute: ActivatedRoute, private apiService: ApiService) { }
 

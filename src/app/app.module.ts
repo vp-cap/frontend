@@ -19,21 +19,13 @@ import { MatCardModule } from '@angular/material/card';
   ],
   imports: [
     BrowserModule,
-<<<<<<< HEAD
-    AppRoutingModule,
-    UploadModule,
-    NoopAnimationsModule,
-    HttpClientModule,
-    MatToolbarModule,
-    WatchModule
-=======
 	AppRoutingModule,
 	UploadModule,
 	NoopAnimationsModule,
 	HttpClientModule,
 	MatToolbarModule,
-	MatCardModule
->>>>>>> 86b8882ff020fb9c13d6fd5ecfdb27ad45ef25f1
+	MatCardModule,
+	WatchModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
