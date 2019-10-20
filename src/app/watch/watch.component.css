@@ -2,7 +2,7 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 50vw;
+  width: 60vw;
   flex-direction: column;
 }
 
@@ -12,4 +12,10 @@ video {
 
 .ad-container {
   display: block;
+  max-width: 100%;
+}
+
+.banner-ad {
+  width: 100%;
+  height: 10vh;
 }

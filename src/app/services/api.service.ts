@@ -17,8 +17,13 @@ export class ApiService {
   }
 
   public getVideoData(id) {
-    let requestURL = `${this.baseUrl}/video/${id}`;
+    let requestURL = `${this.baseUrl}/video/${id}/`;
 
+    return this.httpClient.get(requestURL);
+  }
+
+  public getAllVideos() {
+    let requestURL = `${this.baseUrl}/video/all/`;
     return this.httpClient.get(requestURL);
   }
 

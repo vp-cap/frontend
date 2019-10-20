@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { WatchModule } from './watch/watch.module';
 import { MatCardModule } from '@angular/material/card';
+import { HomeModule } from './home/home.module';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { MatCardModule } from '@angular/material/card';
 	HttpClientModule,
 	MatToolbarModule,
 	MatCardModule,
-	WatchModule,
+  WatchModule,
+  HomeModule,
+  MatChipsModule,
+  MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UploadComponent } from './upload/upload.component';
 import { SearchComponent } from './search/search.component';
 import { WatchComponent } from './watch/watch.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
 	{
@@ -17,6 +18,10 @@ const routes: Routes = [
 		path: 'watch/:video_id',
 		component: WatchComponent
 	},
+	{
+		path: '',
+		component: HomeComponent
+	}
 ];
 
 @NgModule({

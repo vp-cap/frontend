@@ -1,0 +1,9 @@
+<div class="container">  
+  <div *ngFor="let video of videos"
+    style="display: flex; justify-content: space-between; width: 100%; padding: 8px; cursor: pointer"
+    [routerLink]="['/watch/', video.id]"
+    routerLinkActive="active">
+    <div style="font-size: larger;">{{video.title}}</div>
+    <mat-chip-list><mat-chip color="primary" style="font-size: smaller;">{{video.category}}</mat-chip></mat-chip-list>
+  </div>
+</div>
