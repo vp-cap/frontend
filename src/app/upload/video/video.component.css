@@ -8,6 +8,11 @@
     align-self: center;
     margin: 1em;
 }
+h5 {
+	display: flex;
+	justify-content: center;
+	margin: 4px;
+}
 
 #photo {
     display: none;
