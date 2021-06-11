@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8000/api'
+  uploadServiceUrl: 'http://localhost:50051',
+  videoServiceUrl: 'http://localhost:50053'
 };
 
 /*

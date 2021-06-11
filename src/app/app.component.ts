@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hackinout-frontend';
+  title = 'vp-cap-frontend';
 
 	constructor(private data: DataService, private router: Router) {}
 	message:string;

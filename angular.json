@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hackinout-frontend": {
+    "vp-cap-frontend": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -11,9 +11,9 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/hackinout-frontend",
+            "outputPath": "dist/vp-cap-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -56,20 +56,20 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/dev-server:generic",
           "options": {
-            "browserTarget": "hackinout-frontend:build"
+            "browserTarget": "vp-cap-frontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "hackinout-frontend:build:production"
+              "browserTarget": "vp-cap-frontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hackinout-frontend:build"
+            "browserTarget": "vp-cap-frontend:build"
           }
         },
         "test": {
@@ -104,7 +104,7 @@
         }
       }
     },
-    "hackinout-frontend-e2e": {
+    "vp-cap-frontend-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -113,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "hackinout-frontend:serve"
+            "devServerTarget": "vp-cap-frontend:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "hackinout-frontend:serve:production"
+              "devServerTarget": "vp-cap-frontend:serve:production"
             }
           }
         },
@@ -133,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "hackinout-frontend"
+  "defaultProject": "vp-cap-frontend"
 }

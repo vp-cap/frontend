@@ -9,21 +9,18 @@ import { map } from 'rxjs/operators';
 })
 export class ApiService {
 
-  baseUrl = environment.baseUrl;
+  videoServiceUrl = environment.videoServiceUrl;
   constructor(private httpClient: HttpClient) { }
 
-  getStreamURL(id) {
-    return `${this.baseUrl}/video/watch/${id}`;
-  }
-
-  public getVideoData(id) {
-    let requestURL = `${this.baseUrl}/video/${id}/`;
+  public getVideoAndAdData(id) {
+    console.log(this.videoServiceUrl)
+    let requestURL = `${this.videoServiceUrl}/videos/${id}`;
 
     return this.httpClient.get(requestURL);
   }
 
   public getAllVideos() {
-    let requestURL = `${this.baseUrl}/video/all/`;
+    let requestURL = `${this.videoServiceUrl}/videos`;
     return this.httpClient.get(requestURL);
   }
 

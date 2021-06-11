@@ -14,11 +14,11 @@ import { map } from  'rxjs/operators';
 })
 export class UploadService {
 
-	baseUrl = environment.baseUrl;
+	uploadServiceUrl = environment.uploadServiceUrl;
 	constructor(private httpClient: HttpClient) { }
 
 	public upload(data, type) {
-		let uploadURL = (type == 0) ? `${this.baseUrl}/video/upload/` : `${this.baseUrl}/ads/new/`;
+		let uploadURL = (type == 0) ? `${this.uploadServiceUrl}/video` : `${this.uploadServiceUrl}/ad`;
 
 		return this.httpClient.post<any>(uploadURL, data, {
 			reportProgress: true,

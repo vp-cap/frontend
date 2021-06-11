@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.getAllVideos().subscribe((data:any) => {
-      this.videos = data.videos;
+      this.videos = data;
       console.log(this.videos);
     });
   }

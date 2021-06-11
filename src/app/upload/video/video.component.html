@@ -1,22 +1,12 @@
 <div class="uploadForm">
 	<mat-form-field class="example-full-width">
-		<input id="title" matInput type="text" #title name="title" placeholder="Title">
+		<input id="name" matInput type="text" #name name="name" placeholder="Name">
 	</mat-form-field>
 
 	<mat-form-field class="example-full-width">
-		<textarea matInput id="desc" type="text" #desc name="desc" cols="40" rows="5" placeholder="Description"></textarea>
+		<textarea matInput id="videoDesc" type="text" #videoDesc name="videoDesc" cols="40" rows="5" placeholder="Description"></textarea>
 	</mat-form-field>
 
-	<mat-form-field>
-		<mat-label>Category</mat-label>
-		<mat-select [(value)]="selectedCategory">
-			<mat-option *ngFor="let category of categories" [value]="category">
-				{{category}}
-			</mat-option>
-		</mat-select>
-	</mat-form-field>
-	
-		
 	<!-- <div *ngIf="uploadResponse.status === 'progress'">
 		<div role="progressbar" [style.width.%]="uploadResponse.message" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
 			{{uploadResponse.message}}% 
@@ -29,10 +19,11 @@
 	</div>
 	<h5 >{{videoFile && videoFile.name}}</h5>
 
-	<mat-progress-bar  style="margin: 4px 0 4px 0" mode="determinate" [value]="uploadResponse.message"></mat-progress-bar>
+	<mat-progress-bar  style="margin: 4px 0 4px 0" color='#ffffff' mode="determinate" [value]="uploadResponse.message"></mat-progress-bar>
 
-	<button style="margin: 30px" mat-stroked-button color="primary" (click)="onSubmit(title.value, desc.value)">Upload</button>
-
+	<button style="margin: 30px" *ngIf="state == 0" mat-stroked-button color="primary" (click)="onSubmit(name.value, videoDesc.value)">Upload</button>
+	<mat-progress-spinner style="height: 36px; width: 36px;" *ngIf="state == 1" mode="indeterminate"></mat-progress-spinner>
+	<img style="height: 36px; width: 36px;" *ngIf="state == 2" src="../assets/upload/success.png" />
 </div>
 
 

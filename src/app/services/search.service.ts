@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 })
 export class SearchService {
 
-	baseUrl = environment.baseUrl;
+	baseUrl = environment.uploadServiceUrl;
 	constructor(private httpClient: HttpClient) { }
 
 	public search(query) {

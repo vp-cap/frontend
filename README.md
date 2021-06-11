@@ -1,4 +1,8 @@
-# HackinoutFrontend
+# Frontend
+
+NOTE: UI was not the main in focus VP-CAP, so this is not an ideal repository to follow/reference.
+
+Refer [architecture](https://github.com/vp-cap/architecture) for details
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
 

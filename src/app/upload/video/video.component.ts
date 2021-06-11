@@ -8,15 +8,14 @@ import { UploadService } from 'src/app/services/upload.service';
   styleUrls: ['./video.component.css']
 })
 export class VideoComponent implements OnInit {
+	state: number
 	form: FormGroup;
 	uploadResponse = { status: '', message: '', filePath: '' };
 	error: string;
-	categories = ['Sports', 'Kids', 'News', 'Politics', 'Music'];
-	selectedCategory = '';
 	videoFile;
 	constructor(private uploadService: UploadService) { }
 
-	ngOnInit() {}
+	ngOnInit() {this.state = 0}
 
 	onFileChange(event) {
 		if (event.target.files.length > 0) {
@@ -24,17 +23,26 @@ export class VideoComponent implements OnInit {
 		}
 	}
 
-	onSubmit(title, desc) {
+	onSubmit(name, videoDesc) {
 		const formData = new FormData();
-		formData.append('video_file', this.videoFile);
-		formData.append('category', this.selectedCategory);
-		formData.append('title', title);
-		formData.append('description', desc);
-
-		console.log(title)
+		formData.append('videoFile', this.videoFile);
+		formData.append('videoName', name);
+		formData.append('videoDesc', videoDesc);
+		this.state = 1
+		console.log(name)
 		this.uploadService.upload(formData, 0).subscribe(
-		  (res) => this.uploadResponse = res,
-		  (err) => this.error = err
+		  (res) => {
+			  this.uploadResponse = res
+			  if (this.uploadResponse.status == "200") {
+				this.state = 2
+			  } else {
+				  this.state = 0
+			  }
+		  },
+		  (err) => {
+			this.error = err
+			this.state = 0
+			}
 		);
 	}
 }

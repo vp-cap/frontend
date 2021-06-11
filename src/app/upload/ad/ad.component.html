@@ -4,7 +4,11 @@
 	</mat-form-field>
 
 	<mat-form-field class="example-full-width">
-		<input matInput id="image_url" type="url" #image_url name="image_url" placeholder="Image URL">
+		<input matInput id="image_link" type="url" #image_link name="image_link" placeholder="Image Link">
+	</mat-form-field>
+
+	<mat-form-field class="example-full-width">
+		<input matInput id="ad_name" type="text" #ad_name name="ad_name" placeholder="Ad Name">
 	</mat-form-field>
 
 	<mat-form-field>
@@ -14,10 +18,6 @@
 				{{category}}
 			</mat-option>
 		</mat-select>
-	</mat-form-field>
-
-	<mat-form-field class="example-full-width">
-		<input matInput id="object" type="text" #object name="object" placeholder="Object">
 	</mat-form-field>
 
 	<!-- <form class="example-form">
@@ -31,8 +31,9 @@
 		</mat-form-field>
 	</form> -->
 
-	<button style="margin: 30px" mat-stroked-button color="primary" (click)="onSubmit(redirect_url.value, image_url.value, object.value)">Upload</button>
-
+	<button style="margin: 30px" *ngIf="state == 0" mat-stroked-button color="primary" (click)="onSubmit(redirect_url.value, image_link.value, ad_name.value)">Upload</button>
+	<mat-progress-spinner style="height: 36px; width: 36px;" *ngIf="state == 1" mode="indeterminate"></mat-progress-spinner>
+	<img style="height: 36px; width: 36px;" *ngIf="state == 2" src="../assets/upload/success.png" />
 </div>
 
 
